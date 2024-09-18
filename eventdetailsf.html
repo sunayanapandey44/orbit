@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Engineering Expo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .tabs {
+            width: 600px; /* Adjust width */
+            height: 400px; /* Adjust height */
+            margin: 0 auto; /* Center horizontally */
+            margin-top: 50px; /* Add some space between the header and the tab */
+        }
+        
+        .tabs .tab-header {
+            background: #f5f5f5;
+            padding: 15px; /* Adjust padding */
+            display: flex;
+        }
+        
+        .tabs .tab-header > div {
+            position: relative;
+            width: 16.666%; /* Adjust width for six tabs */
+            text-align: center;
+            padding: 10px;
+            z-index: 2;
+            font-weight: 600;
+            color: #888;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+        }
+        
+        .tabs .tab-header > div.active {
+            color: #14bee9;
+        }
+        
+        .tabs .tab-indicator {
+            position: absolute;
+            height: 40px;
+            background: #d9e5f9;
+            top: 10px;
+            left: 10px;
+            border-radius: 20px;
+            transition: all 300ms ease-in-out;
+        }
+        
+        .tabs .tab-body {
+            position: relative;
+            padding: 20px; /* Adjust padding */
+            background: #f5f5f5;
+            border-top: 1px solid #ddd;
+            height: calc(100% - 80px); /* Adjust height */
+            overflow-y: auto; /* Enable vertical scroll */
+            overflow-x: hidden; /* Hide horizontal scroll */
+        }
+        
+        .tabs .tab-body > div {
+            position: absolute;
+            opacity: 0;
+            top: -100%;
+            transform: translateY(-10px);
+            transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+        }
+        
+        .tabs .tab-body > div.active {
+            transform: translateY(0px);
+            top: 30px;
+            opacity: 1;
+        }
+        
+        .tabs .tab-body h1 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        .tabs .tab-body p {
+            color: #555;
+            font-size: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/orbit 2.0 white.png" alt="Orbit Engineering Expo 2.0"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times close-icon" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="event.html">EVENTS</a></li>
+                    <li><a href="sponsor.html">SPONSORS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars menu-icon" onclick="showMenu()"></i>
+        </nav>
+        <h1>Hackathon</h1>
+    </section>
+
+    <!-- Animated Tab Section -->
+    <section class="animated-tab">
+        <div class="row">
+            <div class="animated-col">
+                <img src="images/hackathon.jpg">
+            </div>
+        <div class="animated-col">
+        <div class="tabs">
+            <div class="tab-header">
+                <div class="active">About</div>
+                <div>Structure</div>
+                <div>Timeline</div>
+                <div>FAQs</div>
+                <div>Rules</div>
+                <div>Contact</div>
+            </div>
+            <div class="tab-indicator"></div>
+            <div class="tab-body">
+                <div class="active">
+                    <h1>About</h1>
+                    <p>Orbit Engineering Hacks is an exciting 48-hour hackathon that encourages participants to build innovative and functional solutions to real-world problems. Over the course of two days, teams will work on developing a project and delivering a presentation to showcase their solution. The event is open to high school graduates and undergraduate students in Engineering, IT, and related fields.
+                    </p>
+                </div>
+                <div>
+                    <h1>Structure</h1>
+                    <p>1. Activity: Develop a prototype or solution for a problem within 48 hours.<br><br>
+                        2. Team Size: Teams can have 1-5 participants.<br><br>
+                        3. Technology Stack: Participants are free to use any programming languages, frameworks, or tools of their choice.<br><br>
+                        4. Submission: Teams must submit both their project and a corresponding presentation within the 48-hour time limit.<br><br>
+                        5. Judging Criteria:  <br><br>
+                            Innovation(30%): Originality and creativity of the solution.<br><br>  
+                            Functionality(30%): How well the solution works and its real-world applicability.  <br><br>
+                            Technical Complexity (20%): Depth and complexity of the technology used.  <br><br>
+                            Presentation(20%): How well the team presents their solution and the clarity of their explanation.<br><br>
+                        </p>
+                </div>
+                <div>
+                    <h1>Timeline</h1>
+                    <p>Registration Opens: <br><br>
+                        Registration Closes: <br><br>
+                        Hackathon Starts: <br><br>
+                        Project Submission Deadline: Within 48 hours.<br><br>
+                        Presentations & Judging: Held immediately after the submission window closes.<br><br>
+                        </p>
+                </div>
+                <div>
+                    <h1>FAQs</h1>
+                    <p>1. Who can participate?<br>
+                        High school graduates and undergraduate students in Engineering, IT, and related fields.<br><br>
+                        
+                        2. Can I participate alone?<br>
+                        Yes, participants can join solo or in teams of up to five members.<br><br>
+                        
+                        3. What technologies can be used?<br>
+                        Any programming languages, frameworks, and tools can be used.<br><br>
+                        
+                        4. Will internet access be provided?<br>
+                        Yes, internet access will be available throughout the event.<br><br>
+                        
+                        5. How will the projects be judged?<br>
+                        Projects will be judged based on innovation, functionality, technical complexity, and the quality of the final presentation.<br><br>
+                        </p>
+                </div>
+                <div>
+                    <h1>Rules</h1>
+                    <p>1. Team Size: Teams can have 1-5 participants.<br><br>
+                        2. Duration: The hackathon lasts 48 hours.<br><br>
+                        3. Submission: Projects and presentations must be submitted before the 48-hour deadline.<br><br>
+                        4. Tools: Teams are free to use any programming languages, frameworks, or development tools.<br><br>
+                        5. Originality: All solutions must be original and developed during the hackathon; any form of plagiarism will result in disqualification.<br><br>
+                        6. Decision: The judges' decisions are final.<br><br>
+                        </p>
+                </div>
+                <div>
+                    <h1>Contact</h1>
+                    <p>For more details or queries, please contact:  <br>
+                        Sunayana Pandey, Event Coordinator (Computer and IT Department)  <br>
+                        Email: pandeysunayana2@gmail.com<br>
+                        Phone: 9845077981<br>
+                        
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <h4>About us</h4>
+        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+        <div class="icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </section>
+
+    <!-- JS for toggle menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+        let tabs = document.querySelector(".tabs");
+        let tabHeaderNodes = tabs.querySelectorAll(".tab-header > div");
+        let tabBodyNodes = tabs.querySelectorAll(".tab-body > div");
+
+        for (let i = 0; i < tabHeaderNodes.length; i++) {
+            tabHeaderNodes[i].addEventListener("click", function () {
+                tabs.querySelectorAll(".tab-header > div.active").forEach(tabHeader => tabHeader.classList.remove("active"));
+                tabs.querySelectorAll(".tab-body > div.active").forEach(tabBody => tabBody.classList.remove("active"));
+
+                tabHeaderNodes[i].classList.add("active");
+                tabBodyNodes[i].classList.add("active");
+            });
+        }
+    </script>
+
+</body>
+</html>

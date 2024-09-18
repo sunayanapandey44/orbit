@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Engineering Expo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Spacing between countdown items */
+            font-size: 24px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-item span {
+            display: block;
+        }
+        
+        .countdown-item .label {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+        
+        .registration-announcement {
+            background-color: #ffffff; /* White background */
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid #ddd; /* Optional: add a light border for separation */
+        }
+        
+        .registration-announcement .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .registration-announcement h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .registration-announcement p {
+            font-size: 18px;
+            color: #555;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/orbit 2.0 white.png" alt="Orbit Engineering Expo 2.0"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times close-icon" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="event.html">EVENTS</a></li>
+                    <li><a href="sponsor.html">SPONSORS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars menu-icon" onclick="showMenu()"></i>
+        </nav>
+        <h1>Registration will open soon</h1>
+    </section> 
+
+    <!-- Registration Announcement Section -->
+    <section class="registration-announcement">
+        <div class="container">
+            <h2>Registration will be live on December 1, 2024</h2>
+            <p>Stay tuned for more updates and mark your calendars!</p>
+            <div id="countdown" class="countdown-timer">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Footer -->
+   <section class="footer">
+    <h4>About us</h4>
+    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+    <div class="icon">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+    </div>
+</section>
+    
+
+    <!--js for toggle menu-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+        function updateCountdown() {
+            const countdownDate = new Date("December 1, 2024 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+    
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+    
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "Registration is now open!";
+            }
+        }
+    
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
